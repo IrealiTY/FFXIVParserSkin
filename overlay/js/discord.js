@@ -1,8 +1,11 @@
 function pushToDiscord() {
+
     if (pSettings.current.config.discord.webhook == "") return;
     if (lastData == null) return;
 
+
     $.ajax({
+        success: function(i,j,k){console.log(i,j,k)}, error: function (i,j,k) {console.log(i,j,k)},
         url: pSettings.current.config.discord.webhook,
         type: "POST",
         contentType: 'multipart/form-data',
@@ -22,11 +25,11 @@ function buildDiscordString() {
     } else {
         tags = pSettings.current.config.discord.output.reduced;
     }
-    
+
     var output = "";
     output += parseData(pSettings.current.config.discord.output.opener, lastData.Encounter);
     output += "\n" + _buildDiscordTableHeader(tags);
-    
+
     var filteredData = _.sortBy(_.filter(lastData.Combatant, function (d) {
         return parseInt(parseData(pSettings.current.config.discord.output.sorting, d), 10) > 0;
     }), function(d)  {
@@ -44,7 +47,7 @@ function _buildDiscordTableHeader(tags) {
     var output = "";
     $.each(tags, function (index, tag) {
         if (typeof dataTagsDiscord[tag] == "undefined") return "Error occured generating header";
-        
+
         if (typeof dataTagsDiscord[tag].column !== "undefined") {
             var colTag = (index == 0 ? "#" : "") + dataTagsDiscord[tag].column;
             if (typeof dataTagsDiscord[tag].width !== "undefined") {
@@ -52,10 +55,10 @@ function _buildDiscordTableHeader(tags) {
             }
             output += colTag;
         }
-        
+
         output += (new Array(pSettings.current.config.discord.output.tabLength + 1)).join(" ");
     });
-    
+
     return output;
 }
 
