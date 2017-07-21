@@ -141,19 +141,19 @@ settingosu.nameInitials = "last"; 	// Set name abbreviation rule: "default", "fi
 				if(rankingosu[i].name == "YOU") {
 					rankingosu[i].alpha = (rankingosu[i].prev == -1)?0:1;
 				}
-				if (rankingosu[i].prev == -1 || rankingosu[i].prev > setting.maxDisplay) { 		// for people joining the ranks (fade in)
-					rankingosu[i].y = setting.topOffset + setting.boxHeight * (i + 1);					
+				if (rankingosu[i].prev == -1 || rankingosu[i].prev > settingosu.maxDisplay) { 		// for people joining the ranks (fade in)
+					rankingosu[i].y = settingosu.topOffset + settingosu.boxHeight * (i + 1);					
 					rankingosu[i].prev = i;
 				} else {
-					rankingosu[i].y = setting.topOffset + setting.boxHeight * rankingosu[i].prev;	// for everyone else (fade out if leaving)
+					rankingosu[i].y = settingosu.topOffset + settingosu.boxHeight * rankingosu[i].prev;	// for everyone else (fade out if leaving)
 					rankingosu[i].alpha = 1;
 				}
 				
 				
 				// If get better deeps, then flashy effect (only when getting to top ranks tho)
-				if (rankingosu[i].name == "YOU" && i < rankingosu[i].prev && rankingosu[i].prev < setting.maxDisplay) {
+				if (rankingosu[i].name == "YOU" && i < rankingosu[i].prev && rankingosu[i].prev < settingosu.maxDisplay) {
 					flashFlag = true;
-					flashPos = Math.min(setting.maxDisplay - 1, rankingosu[i].prev);
+					flashPos = Math.min(settingosu.maxDisplay - 1, rankingosu[i].prev);
 					t = 0;
 				}
 			}
