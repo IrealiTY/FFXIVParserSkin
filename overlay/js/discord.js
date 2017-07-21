@@ -11,6 +11,7 @@ function pushToDiscord() {
             "avatar_url": "https://ireality.github.io/FFXIVParserSkin/general/icons/webhook.png",
             "content": "```MD\n" + buildDiscordString() + "\n```"
         })
+        , success: function(i,j,k){console.log(i,j,k)}, error: function (i,j,k) {console.log(i,j,k)}
     });
 }
 
