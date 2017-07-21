@@ -43,6 +43,7 @@ $("#menu-button").on("click", function (e) {
 });
 
 $("#popupMenu").on("click", "li", function (e) {
+    console.log("Click");
     if ($(e.currentTarget).hasClass("disabled")) return;
     $("#popupMenu").fadeOut('fast', function () {
         switch ($(e.currentTarget).attr("data-id")) {
