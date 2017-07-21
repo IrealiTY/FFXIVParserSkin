@@ -38,36 +38,58 @@
 #popupMenu .menu-section {
     border-bottom: 1px solid #1a1c1e;
     border-top: 1px solid #636164;
-    background: #414141;
+    background: #414141
 }
 
 #popupMenu .menu-section p {
     margin: 0;
-    padding: 4px 8px;
+    padding: 4px 8px
 }
 
 #popupMenu .menu-section:first-child {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    border-top: 0;
+    border-top: 0
+}
+
+#popupMenu .menu-section:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom: 0
+}
+
+#popupMenu .menu-section.debug-list {
+    display: none
 }
 
 #popupMenu .menu-section .popup-menu-list {
     list-style-type: none;
     color: #e6e3d9;
     margin: 0;
-    padding: 4px 8px;
+    padding: 4px 8px
 }
 
 #popupMenu .menu-section .popup-menu-list li {
-    padding: 1px 5px;
+    padding: 1px 5px
 }
 
-#popupMenu .menu-section:last-child {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom: 0;
+#popupMenu .menu-section .popup-menu-list li:hover {
+    background: linear-gradient(to right, #262123 0, #414141 100%);
+    border-radius: 12px
 }
+
+#popupMenu .menu-section .popup-menu-list li.disabled {
+    opacity: .6
+}
+
+#popupMenu .menu-section .popup-menu-list li.disabled:hover {
+    background: 0 0
+}
+
+#popupMenu .menu-section .popup-menu-list li[data-id=pushToDiscord] {
+    display: none
+}
+
 
 * {
 	font-family: "Aller";
