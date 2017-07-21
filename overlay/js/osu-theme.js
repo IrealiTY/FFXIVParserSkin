@@ -78,7 +78,7 @@ var dataset = [];
 				ranking[i].misses  = data.Combatant[combName]["misses"];
 				
 				// this is just to grab the correct glow icon
-				ranking[i].job = data.Combatant[combName]["Job"];
+				ranking[i].job = data.Combatant[combName]["Job"].toLowerCase();
 				if(ranking[i].job == undefined || ranking[i].job  == "") {
 					ranking[i].job = ranking[i].name;
 					if(ranking[i].job.indexOf("-Egi (") != -1) {
@@ -216,7 +216,7 @@ var dataset = [];
 					
 				}
 								
-				box.innerHTML = " <img src='images/glow/" + ranking[i].job.toLowerCase() + ".png' >";
+				box.innerHTML = " <img src='images/glow/" + ranking[i].job + ".png' >";
 				box.innerHTML += "<div class='playerName" + ((i == myRank)?" me":"") + "'>" + processName(ranking[i].name) + "</div><br>";
 				
 				// writing the deeps or damage
