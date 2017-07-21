@@ -8,7 +8,7 @@ function pushToDiscord() {
         contentType: 'multipart/form-data',
         data: JSON.stringify({
             "username": "FFXIV Parse",
-            "avatar_url": "https://ihellmasker.github.io/FFXIVParserSkin/general/icons/webhook.png",
+            "avatar_url": "https://ireality.github.io/FFXIVParserSkin/general/icons/webhook.png",
             "content": "```MD\n" + buildDiscordString() + "\n```"
         })
     });
