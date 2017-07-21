@@ -252,9 +252,9 @@ var dataset = [];
 				
 				
 				// COLOR SETTING
-				var tank   = ["Gld", "Gla", "Pld", "Mrd", "War", "Drk"];
-				var dps    = ["Pgl", "Mnk", "Lnc", "Drg", "Arc", "Brd", "Rog", "Nin", "Acn", "Smn", "Thm", "Blm", "Mch", "Sam", "Rdm"];
-				var healer = ["Cnj", "Whm", "Sch", "Ast"];
+				var tank   = ["gld", "gla", "pld", "mrd", "war", "drk"];
+				var dps    = ["pgl", "mnk", "lnc", "drg", "arc", "brd", "rog", "nin", "acn", "smn", "thm", "blm", "mch", "sam", "rdm"];
+				var healer = ["cnj", "whm", "sch", "ast"];
 				
 				var maxOpacity = (i == myRank)?0.4:0.3;
 				var minOpacity = (i == myRank)?0.1:0.0;
