@@ -216,7 +216,7 @@ var dataset = [];
 					
 				}
 								
-				box.innerHTML = " <img src='images/glow/" + ranking[i].job + ".png' >"; 
+				box.innerHTML = " <img src='images/glow/" + ranking[i].job.toLowerCase() + ".png' >";
 				box.innerHTML += "<div class='playerName" + ((i == myRank)?" me":"") + "'>" + processName(ranking[i].name) + "</div><br>";
 				
 				// writing the deeps or damage
